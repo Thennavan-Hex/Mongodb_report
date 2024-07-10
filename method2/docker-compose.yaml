@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    container_name: method1
+    container_name: method2
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
     depends_on:
       - mongo
   mongo:
-    container_name: method1_mongo
+    container_name: method2_mongo
     image: mongo
     ports:
       - "27016:27016"
