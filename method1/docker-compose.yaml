@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    container_name: latest-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/my-database
+    depends_on:
+      - mongo
+  mongo:
+    container_name: latest-mongo
+    image: mongo
+    ports:
+      - "27016:27016"
